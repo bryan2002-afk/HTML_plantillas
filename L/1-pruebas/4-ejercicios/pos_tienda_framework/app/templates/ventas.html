@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Vender Producto</h2>
+<p><strong>Producto:</strong> {{ producto.nombre }}</p>
+<p><strong>Precio:</strong> ${{ producto.precio }}</p>
+<p><strong>Stock disponible:</strong> {{ producto.stock }}</p>
+
+<form method="post">
+    <label>Cantidad a vender:</label>
+    <input type="number" name="cantidad" min="1" max="{{ producto.stock }}" required><br>
+    <button type="submit">Realizar Venta</button>
+</form>
+{% endblock %}

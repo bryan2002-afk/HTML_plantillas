@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> uno </title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<style>
+    body {
+        display: flex;
+        flex-direction: column; /* Coloca el título arriba y las tarjetas abajo */
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: black;
+        font-family: Arial, sans-serif;
+    }
+
+    h1 {
+        font-size: 4rem;
+        background-image: -webkit-linear-gradient(125deg, #f2291b, #f7db25, #84f527);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: hue 10s infinite linear;
+    }
+
+    @keyframes hue {
+        from {
+            filter: hue-rotate(0deg);
+        }
+        to {
+            filter: hue-rotate(-360deg);
+        }
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        position: relative;
+        width: 180px;
+        height: 300px;
+        padding: 15px;
+        background: linear-gradient(60deg, #7f7f7f 0%, #d0d0d0 100%);
+        overflow: hidden;
+        margin: 10px;
+        border-radius: 20px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        background-color: #ffffff;
+    }
+
+    .card h2 {
+        z-index: 99;
+        position: absolute;
+        bottom: 40px;
+        right: 90px;
+        font-size: 25px;
+        font-weight: 700;
+        color: black;
+        pointer-events: none;
+        transition: 0.2s ease;
+        text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .card p {
+        z-index: 99;
+        position: absolute;
+        bottom: 30px;
+        right: 130px;
+        width: 150px;
+        color: #fff;
+        opacity: 0;
+        font-size: 12px;
+        text-align: right;
+        letter-spacing: 1px;
+        transition: 0.2s ease;
+    }
+
+    .card span {
+        z-index: 99;
+        position: absolute;
+        top: 60px;
+        right: 35px;
+        color: #fff;
+        font-size: 12px;
+        letter-spacing: 1px;
+        writing-mode: vertical-lr;
+        transition: 0.2s ease;
+        opacity: 0.7;
+    }
+
+    .card .pic {
+        z-index: 100;
+        width: 395px;
+        height: 200px;
+        background-image: url(img/user.jpg);
+        background-size: cover;
+        border-radius: 12px;
+        filter: grayscale(100%);
+        transition: 0.3s ease;
+    }
+
+    .card button {
+        position: absolute;
+        right: 30px;
+        bottom: 40px;
+        width: 30px;
+        height: 30px;
+        background-color: #772a9b;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        outline: none;
+        opacity: 1;
+        transition: 0.3s ease;
+    }
+
+    .card:hover button {
+        transform: scale(8.5);
+        opacity: 0.5;
+    }
+
+    .card:hover p {
+        opacity: 1;
+        right: 60px;
+    }
+
+    .card:hover span {
+        opacity: 0;
+        top: 80px;
+    }
+
+    .card:hover .pic {
+        filter: grayscale(0);
+        width: 470px;
+    }
+
+    .card2 .pic {
+        background-image: url(img/idea.png);
+    }
+
+    .card2 button {
+        background-color: #26c3a1;
+    }
+</style>
+
+<body>
+    <h1>Bienvenido al menu POS</h1>
+
+    <div class="container">
+        <div class="card">
+            <h2>Hola1</h2>
+            <p>madafackers.</p>
+            <span></span>
+            <div class="pic"></div>
+            <button></button>
+        </div>
+
+        <div class="card card2">
+            <h2>Hola2</h2>
+            <p>madafackers.</p>
+            <span></span>
+            <div class="pic"></div>
+            <button></button>
+        </div>
+
+        <div class="card card3">
+            <h2>Hola3</h2>
+            <p>madafackers.</p>
+            <span></span>
+            <div class="pic"></div>
+            <button></button>
+        </div>
+
+        <div class="card card4">
+            <h2>Hola4</h2>
+            <p>madafackers.</p>
+            <span></span>
+            <div class="pic"></div>
+            <button></button>
+        </div>
+
+        <div class="card card5">
+            <h2>Hola5</h2>
+            <p>madafackers.</p>
+            <span></span>
+            <div class="pic"></div>
+            <button></button>
+        </div>
+
+        <div class="card card6">
+            <h2>Hola6</h2>
+            <p>madafackers.</p>
+            <span></span>
+            <div class="pic"></div>
+            <button></button>
+        </div>
+    </div>
+</body>
+</html>

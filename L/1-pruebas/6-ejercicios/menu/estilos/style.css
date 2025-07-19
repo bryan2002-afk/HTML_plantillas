@@ -1,0 +1,52 @@
+/* Fuente y color de fondo principal del sitio */
+body {
+  font-family: sans-serif;
+  background: #2c3e50; /* Azul grisáceo oscuro */
+}
+
+/* Contenedor del menú */
+nav {
+  margin: 27px auto 0;
+  position: relative;
+  width: 590px;
+  height: 50px;
+  background-color: #34495e; /* Azul oscuro */
+  border-radius: 8px;
+  font-size: 0; /* Elimina espacios entre elementos inline-block */
+}
+
+/* Estilos de cada enlace del menú */
+nav a {
+  line-height: 50px;
+  height: 100%;
+  font-size: 15px;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  width: 118px; /* Ancho igual para cada botón: 590px / 5 = 118 */
+}
+
+/* Elemento animado que se desliza debajo del botón activo */
+nav .animation {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  z-index: 0;
+  transition: all 0.5s ease 0s;
+  border-radius: 8px;
+  background-color: #1abc9c; /* Color inicial: turquesa */
+  width: 118px;
+  left: 0;
+}
+
+/* Estilo del enlace activo */
+nav a.active {
+  color: #2c3e50; /* Cambia el texto a oscuro cuando está activo */
+  font-weight: bold;
+}
+

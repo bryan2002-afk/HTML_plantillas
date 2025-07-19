@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina Inicio</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+
+</head>
+
+<style>
+
+  * {
+      border-radius: 8px;
+  }
+
+  body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(12, 1fr);
+      height: 98vh;
+      gap: 5px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 20px;
+      /*font-weight: bold;*/
+  }
+
+  header {
+      background-color: rgb(196, 196, 196);
+      grid-column: 1/-1;
+      padding: 10px 20px;
+      display: flex;
+      place-content: start; /**/
+  }
+
+  nav {
+      background-color: #ff006d;
+      grid-column: 1/-1;
+      display: grid;
+      height: 70px; /*altura de nav rosa de 30px*/
+      place-content: center;
+  }
+
+  aside {
+      background-color: #adff02;
+      grid-row: 3/12;
+      display: grid;
+      place-content: center;
+  }
+
+  section {
+      background-color: #ff7d00;
+      text-align: center;
+      grid-row: 3/12;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      gap: 10px;
+  }
+
+  article {
+      background-color: #ffdd00;
+      height: 100%;
+      display: grid;
+      place-content: center;
+  }
+
+  footer {
+      background-color: #8f00ff;
+      grid-column: 1/-1;
+      display: grid;
+      place-content: center;
+  }
+
+
+
+
+
+  /*  ------------------------------------  */
+
+  /* Estilos para la imagen dentro del contenedor con clase 'logo' */
+  .logo img {
+      width: 50px;         /* Establece el ancho de la imagen del logo a 250px */
+      height: auto;         /* Mantiene la proporción original de la imagen */
+      /*margin-left: 180px;    /*Añade un margen izquierdo para posicionarla más hacia la derecha */
+      display: flex;                           /*justify-content: end;  Esta propiedad no tiene efecto en imágenes directamente; se usa con elementos flexibles */
+      flex-direction: column;
+      text-align: center;
+      margin: 10px 12px;
+    }
+
+  /* Estilos para la imagen dentro del contenedor con clase 'profile' */
+  .profile img {
+        width: 40px;           /* Establece el ancho de la imagen del perfil a 100px */
+        height: 40px;          /* Establece la altura de la imagen del perfil a 100px */
+        border-radius: 50%;     /* Convierte la imagen en un círculo */
+      /*  margin-bottom: 10px;     Agrega un espacio inferior debajo de la imagen */
+  }
+
+
+  .spacer {
+      flex: 1; /* Ocupa todo el espacio disponible dentro de un contenedor flex,
+                  empujando otros elementos hacia los extremos */
+  }
+
+  /* Contenedor principal para la sección de información de contacto */
+  .info-contacto {
+      display: flex;              /* Utiliza modelo Flexbox para organizar los elementos hijos */
+      flex-direction: column;    /* Coloca los elementos hijos en una columna (uno debajo del otro) */
+      text-align: center;          /* Alinea el texto a la izquierda */
+      margin: 10px 20px;            /* Agrega margen lateral de 40px a la izquierda y derecha */
+  }
+
+  /* Estilo específico para el número de teléfono dentro de .info-contacto */
+  .info-contacto .telefono {
+      color: rgb(6, 137, 181);   /* Azul personalizado para destacar el número de teléfono */
+      /*font-weight: bold;          Texto en negrita */
+      font-size: 1em;            /* Tamaño de fuente estándar (igual al tamaño base del padre) */
+  }
+
+  /* Estilo específico para el texto de servicio dentro de .info-contacto */
+  .info-contacto .servicio {
+      color: red;                /* Rojo para llamar la atención */
+      font-size: 0.9em;          /* Ligeramente más pequeño que el tamaño base */
+  }
+
+  /* Estilo general para cualquier elemento con la clase "telefono" */
+  .telefono {
+      color: blue;               /* Azul estándar (menos personalizado que el anterior) */
+      font-size: 0.9em;          /* Tamaño de fuente un poco más pequeño que el estándar */
+  }
+
+  /* Estilo general para cualquier elemento con la clase "servicio" */
+  .servicio {
+      color: red;                /* Rojo para destacar */
+      font-size: 0.85em;         /* Tamaño ligeramente más pequeño que el anterior */
+  }
+
+
+  /* --------------------------- */
+
+  /* Contenedor del lado derecho del encabezado que agrupa varios elementos (por ejemplo, contacto o redes sociales) */
+  .header-right {
+      display: flex;             /* Activa Flexbox para alinear elementos en línea horizontal */
+      align-items: center;       /* Centra verticalmente los elementos dentro del contenedor */
+      gap: 15px;                 /* Espacio entre los elementos hijos */
+      margin-right: 100px;        /* Margen derecho para separar del borde del contenedor principal */
+  }
+
+  /* Contenedor de los íconos de redes sociales */
+  .social-icons {
+      margin-left: auto;         /* Empuja este bloque completamente a la derecha dentro de un contenedor flex */
+      display: flex;             /* Usa Flexbox para alinear los íconos en línea */
+      gap: 15px;                 /* Espacio entre cada ícono */
+      margin-right: 30px;        /* Añade margen a la derecha para separarse del borde o de otros elementos */
+  }
+
+  /* Estilos base para los enlaces de redes sociales */
+  .social-icons a {
+      color: rgb(6, 137, 181);               /* Color gris oscuro por defecto */
+      font-size: 1.4em;          /* Tamaño del ícono (escala con respecto al texto base) */
+      transition: color 0.3s;    /* Transición suave cuando cambia el color al pasar el mouse */
+  }
+
+  /* Estilos al pasar el mouse sobre los íconos de redes sociales */
+  .social-icons a:hover {
+      color: #ff006d;            /* Cambia a azul (puede representar LinkedIn, por ejemplo) */
+  }
+
+
+
+
+</style>
+
+<body>
+
+  <!--<header>header</header>-->
+  <header>
+
+      <div class="logo">
+        <img src="perfil2.ico" alt="Profile image">
+        <a>Usuario</a>
+      </div>
+
+      <div class="spacer"></div>  <!--Esto empuja la info hacia la derecha-->
+      <div class="header-right">
+
+        <div class="info-contacto">
+          <div class="telefono">Atención a clientes: 951 516 6641</div>
+          <div class="servicio">Servicio a domicilio sin costo</div>
+        </div>
+
+        <br><br><br>
+
+        <div class="spacer"></div>
+
+        <div class="social-icons">
+          <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+	  <br>
+          <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <br>
+          <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+  </header>
+
+  <nav>nav</nav>
+
+  <aside>aside</aside>
+
+  <section>
+    <article>article</article>
+    <article>article</article>
+    <article>article</article>
+  </section>
+
+  <footer>footer</footer>
+  
+</body>
+
+</html>

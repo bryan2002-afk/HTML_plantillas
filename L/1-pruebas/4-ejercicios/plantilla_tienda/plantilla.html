@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Farmacia Salud Total - Carrito</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #e3f2fd, #bbdefb);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    header {
+      background-color: #1565c0;
+      color: white;
+      padding: 20px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      margin-bottom: 15px;
+    }
+    nav {
+      background-color: #1976d2;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 10px 0;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ffcc80;
+    }
+    .search-box {
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 20px;
+    }
+    .search-box input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 25px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+    main {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .productos {
+      flex: 3;
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+      gap: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover {
+      transform: scale(1.02);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card-body {
+      padding: 15px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .card-body h3 {
+      color: #1565c0;
+      font-size: 1.1em;
+      margin-bottom: 10px;
+    }
+    .card-body p {
+      color: #555;
+      margin-bottom: 15px;
+    }
+    .card-body button {
+      background-color: #1976d2;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .card-body button:hover {
+      background-color: #0d47a1;
+    }
+
+    /* Estilos carrito */
+    aside.carrito {
+      flex: 1;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      max-height: 600px;
+      overflow-y: auto;
+      display: none; /* oculto por defecto */
+      flex-direction: column;
+      gap: 15px;
+      min-width: 280px;
+    }
+    aside.carrito.visible {
+      display: flex;
+    }
+    aside.carrito h2 {
+      color: #1565c0;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    .carrito-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+    .carrito-item span {
+      flex-grow: 1;
+    }
+    .carrito-item button {
+      background: #e53935;
+      border: none;
+      color: white;
+      border-radius: 5px;
+      padding: 5px 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .carrito-item button:hover {
+      background: #b71c1c;
+    }
+    .total {
+      margin-top: auto;
+      font-weight: bold;
+      font-size: 1.2em;
+      text-align: center;
+      border-top: 1px solid #ddd;
+      padding-top: 15px;
+      color: #1565c0;
+    }
+
+    /* 📱 Responsive Design */
+    @media (max-width: 768px) {
+      main {
+        flex-direction: column;
+        align-items: center;
+      }
+      .productos {
+        grid-template-columns: 1fr;
+      }
+      aside.carrito {
+        width: 100%;
+        max-width: 500px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Farmacia Salud Total</h1>
+  </header>
+
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Productos</a>
+    <a href="#">Contacto</a>
+  </nav>
+
+  <div class="search-box">
+    <input id="searchInput" type="text" placeholder="Buscar productos..." onkeyup="filtrarProductos()" />
+  </div>
+
+  <main>
+    <section class="productos" id="productos">
+      <!-- Productos insertados desde JS -->
+    </section>
+
+    <aside class="carrito" id="carrito">
+      <h2>Carrito de Compras</h2>
+      <div id="carritoItems"></div>
+      <div class="total" id="total">Total: $0.00 MXN</div>
+    </aside>
+  </main>
+
+  <script>
+    const productos = [
+      { id: 1, nombre: 'Paracetamol 500mg', precio: 20.00, img: 'img/paracetamol.png' },
+      { id: 2, nombre: 'Jarabe para la tos', precio: 55.00, img: 'img/jarabe.png' },
+      { id: 3, nombre: 'Gel Antibacterial', precio: 35.00, img: 'img/gel-antibacterial.png' },
+      { id: 4, nombre: 'Vitaminas C', precio: 80.00, img: 'img/vitaminas-c.png' },
+      { id: 5, nombre: 'Paracetamol 500mg', precio: 20.00, img: 'img/paracetamol.png' },
+      { id: 6, nombre: 'Jarabe para la tos', precio: 55.00, img: 'img/jarabe.png' },
+      { id: 7, nombre: 'Gel Antibacterial', precio: 35.00, img: 'img/gel-antibacterial.png' },
+      { id: 8, nombre: 'Vitaminas C', precio: 80.00, img: 'img/vitaminas-c.png' }
+    ];
+
+    let carrito = [];
+
+    const productosContainer = document.getElementById('productos');
+    const carritoItems = document.getElementById('carritoItems');
+    const totalDisplay = document.getElementById('total');
+    const searchInput = document.getElementById('searchInput');
+    const carritoAside = document.getElementById('carrito');
+
+    function mostrarProductos(lista) {
+      productosContainer.innerHTML = '';
+      if(lista.length === 0){
+        productosContainer.innerHTML = '<p>No hay productos que coincidan.</p>';
+        return;
+      }
+      lista.forEach(prod => {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.innerHTML = `
+          <img src="${prod.img}" alt="${prod.nombre}">
+          <div class="card-body">
+            <h3>${prod.nombre}</h3>
+            <p>$${prod.precio.toFixed(2)} MXN</p>
+            <button onclick="agregarAlCarrito(${prod.id})">Agregar al carrito</button>
+          </div>
+        `;
+        productosContainer.appendChild(card);
+      });
+    }
+
+    function agregarAlCarrito(id) {
+      const producto = productos.find(p => p.id === id);
+      const item = carrito.find(c => c.id === id);
+
+      if(item) {
+        item.cantidad++;
+      } else {
+        carrito.push({...producto, cantidad: 1});
+      }
+      actualizarCarrito();
+    }
+
+    function quitarDelCarrito(id) {
+      carrito = carrito.filter(item => item.id !== id);
+      actualizarCarrito();
+    }
+
+    function actualizarCarrito() {
+      carritoItems.innerHTML = '';
+      if(carrito.length === 0) {
+        carritoAside.classList.remove('visible'); // Oculta carrito
+        return;
+      }
+
+      carritoAside.classList.add('visible'); // Muestra carrito
+
+      let total = 0;
+      carrito.forEach(item => {
+        total += item.precio * item.cantidad;
+        const div = document.createElement('div');
+        div.classList.add('carrito-item');
+        div.innerHTML = `
+          <span>${item.nombre} x${item.cantidad}</span>
+          <button onclick="quitarDelCarrito(${item.id})" title="Quitar">×</button>
+        `;
+        carritoItems.appendChild(div);
+      });
+      totalDisplay.textContent = `Total: $${total.toFixed(2)} MXN`;
+    }
+
+    function filtrarProductos() {
+      const texto = searchInput.value.toLowerCase();
+      const filtrados = productos.filter(p => p.nombre.toLowerCase().includes(texto));
+      mostrarProductos(filtrados);
+    }
+
+    // Inicialización
+    mostrarProductos(productos);
+  </script>
+
+</body>
+</html>

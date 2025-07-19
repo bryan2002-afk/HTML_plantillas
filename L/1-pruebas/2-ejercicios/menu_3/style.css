@@ -1,0 +1,112 @@
+/* Línea superior */
+.top-line {
+    height: 4px;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Contenedor del header */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(219, 209, 209);
+    padding: 10px 50px;
+    margin-top: 4px; /* para dejar espacio debajo de la top-line */
+}
+
+/* Logo */
+.logo img {
+    height: 100px;
+    width: auto;
+}
+
+/* Íconos sociales */
+.social-icons ul {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.social-icons i {
+    font-size: 22px;
+    color: rgb(6, 137, 181);
+    transition: 0.3s;
+}
+
+.social-icons i:hover {
+    color: #f0ac45;
+}
+
+/* Menú principal */
+.main-nav {
+    background-color: rgb(219, 209, 209);
+    display: flex;
+    justify-content: center;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: rgb(6, 137, 181);
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.main-nav a:hover {
+    color: #f0ac45;
+}
+
+nav {
+    background-color: #ff006d;
+    grid-column: 1/-1;
+    display: grid;
+    height: 70px; /*altura de nav rosa de 30px*/
+    place-content: center;
+}
+
+aside {
+      background-color: #adff02;
+      grid-row: 3/12;
+      display: grid;
+      place-content: center;
+}
+
+section {
+    background-color: #ff7d00;
+    text-align: center;
+    grid-row: 3/12;
+    display: flex;
+    /*flex-direction: column;*/
+    justify-content: space-between;
+    padding: 10px;
+    gap: 10px;
+}
+
+article {
+    background-color: #ffdd00;
+    width: 300px;
+    height: auto;
+    display: grid;
+    place-content: center;
+}
+
+footer {
+    background-color: #8f00ff;
+    grid-column: 1/-1;
+    display: grid;
+    place-content: center;
+}

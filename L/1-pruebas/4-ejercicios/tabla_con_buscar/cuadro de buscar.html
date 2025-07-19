@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabla con Buscador</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    input[type="text"] {
+      margin-bottom: 10px;
+      padding: 6px;
+      width: 300px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Clientes</h2>
+
+  <!-- Cuadro de búsqueda -->
+  <input type="text" id="buscador" placeholder="Buscar por nombre o ciudad..." onkeyup="filtrarTabla()">
+
+  <!-- Tabla -->
+  <table id="tablaClientes">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Ciudad</th>
+        <th>Latitud</th>
+        <th>Longitud</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Juan Pérez</td>
+        <td>Oaxaca</td>
+        <td>17.0608</td>
+        <td>-96.7253</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Ana Gómez</td>
+        <td>CDMX</td>
+        <td>19.4326</td>
+        <td>-99.1332</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Pedro Martínez</td>
+        <td>Guadalajara</td>
+        <td>20.6597</td>
+        <td>-103.3496</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Script para filtrar -->
+  <script>
+    function filtrarTabla() {
+      const input = document.getElementById("buscador");
+      const filtro = input.value.toLowerCase();
+      const tabla = document.getElementById("tablaClientes");
+      const filas = tabla.getElementsByTagName("tr");
+
+      for (let i = 1; i < filas.length; i++) {
+        const celdas = filas[i].getElementsByTagName("td");
+        let mostrar = false;
+
+        for (let j = 0; j < celdas.length; j++) {
+          const texto = celdas[j].textContent.toLowerCase();
+          if (texto.includes(filtro)) {
+            mostrar = true;
+            break;
+          }
+        }
+
+        filas[i].style.display = mostrar ? "" : "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
+

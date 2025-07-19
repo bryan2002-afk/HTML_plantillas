@@ -1,0 +1,366 @@
+/* Estilos globales */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el título */
+.titulo-principal {
+    font-size: 20px; /* Tamaño del texto, equivalente al tamaño 6 del <font> */
+    font-weight: 700; /* Negrita */
+    font-family: "Orbitron", sans-serif;
+    color: rgb(255, 87, 51);
+    text-align: left; /* Alineación del texto a la derecha */
+    margin-left: 20px; /* Margen derecho para ajustar la distancia desde el borde */
+    margin-top: 0; /* Sin margen superior, alineado al borde superior */
+}
+
+.titulo-producto {
+    font-size: 20px; /* Tamaño del texto, equivalente al tamaño 6 del <font> */
+    font-weight: 700; /* Negrita */
+    font-family: "Orbitron", sans-serif;
+    color: rgb(255, 87, 51);
+    text-align: left; /* Alineación del texto a la derecha */
+    margin-left: 20px; /* Margen derecho para ajustar la distancia desde el borde */
+    margin-top: 0; /* Sin margen superior, alineado al borde superior */
+}
+
+.titulo-historia {
+    font-size: 20px; /* Tamaño del texto, equivalente al tamaño 6 del <font> */
+    font-weight: 700; /* Negrita */
+    font-family: "Orbitron", sans-serif;
+    color: rgb(255, 87, 51);
+    text-align: left; /* Alineación del texto a la derecha */
+    margin-left: 20px; /* Margen derecho para ajustar la distancia desde el borde */
+    margin-top: 0; /* Sin margen superior, alineado al borde superior */
+}
+
+.titulo-contacto {
+    font-size: 20px; /* Tamaño del texto, equivalente al tamaño 6 del <font> */
+    font-weight: 700; /* Negrita */
+    font-family: "Orbitron", sans-serif;
+    color: rgb(255, 87, 51);
+    text-align: left; /* Alineación del texto a la derecha */
+    margin-left: 20px; /* Margen derecho para ajustar la distancia desde el borde */
+    margin-top: 0; /* Sin margen superior, alineado al borde superior */
+}
+
+.saira {
+    font-family: "Saira", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100;
+  }
+
+.protest-guerrilla-regular {
+    font-family: "Protest Guerrilla", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.orbitron {
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  
+/* Estilos del contenedor del menú desplegable */
+.dropdown {
+    position: relative;
+    display: inline-block; /* Asegura que el contenedor se ajuste al contenido */
+    cursor: pointer;
+}
+
+/* Estilos del botón del menú */
+.dropdown > button {
+    margin-left: 20px;
+    width: 100px; /* Ajusta el ancho del botón */
+    height: 50px; /* Ajusta la altura del botón */
+    border: 0;
+    border-radius: 25px; /* Radio del borde */
+    font-family: 'Orbitron', sans-serif; /* Fuente del botón */
+    font-size: 16px; /* Tamaño de la fuente */
+    background-color: black; /* Gradiente de azul marino */
+    color: #fff; /* Color del texto */
+    transition: background 0.3s, transform 0.3s; /* Transición para efectos */
+}
+
+/* Efecto de sombreado y escala del botón al pasar el ratón */
+.dropdown > button:hover {
+    background: linear-gradient(135deg, #004080, #0099ff); /* Gradiente más claro para el efecto hover */
+    transform: scale(1.05);
+}
+
+/* Estilos del contenido desplegable */
+.dropdown-content {
+    display: none; /* Oculta el menú por defecto */
+    position: absolute;
+    top: 100%; /* Posiciona el menú directamente debajo del botón */
+    left: 0;
+    width: 200px; /* Ajusta el ancho del menú (aumentado para mayor espacio) */
+    height: 300px; 
+    background-image: url('img/led.jpg'); /* Imagen de fondo del menú */
+    background-repeat: no-repeat; /* No repite la imagen de fondo */
+    background-position: center center; /* Centra la imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra todo el área del menú */    
+    border-radius: 25px; /* Borde del menú */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra del menú */
+    z-index: 1; /* Asegura que el menú esté encima de otros elementos */
+    transition: opacity 0.3s, transform 0.3s; /* Transición para efectos de aparición */
+    opacity: 0;
+    transform: translateY(-10px);
+    padding: 30px; /* Espaciado interno del menú */
+}
+
+/* Estilos de los enlaces en el menú */
+.dropdown-content a {
+    color: #f7f7f7; /* Color del texto */
+    padding: 20px 25px; /* Espaciado dentro de los enlaces */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    display: flex; /* Usa flexbox para alinear íconos y texto */
+    align-items: center; /* Alinea verticalmente los íconos y el texto */
+    gap: 10px; /* Espacio entre el ícono y el texto */
+    transition: background-color 0.3s, color 0.3s; /* Transición para efectos */
+}
+
+/* Cambia el fondo y el color del texto al pasar el ratón sobre los enlaces */
+.dropdown-content a:hover {
+    background-color: #004080; /* Fondo más oscuro para el efecto hover */
+    color: #ff5a2c; /* Color del texto más claro */
+}
+
+/* Muestra el menú al pasar el ratón sobre el contenedor del menú */
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.marquesina-container {
+    width: 10%; /* Ocupa el ancho completo del contenedor */
+    height: 2px;
+    overflow: hidden; /* Oculta el contenido que desborda el contenedor */
+    background: white; /* Color de fondo del contenedor */
+    border: 0; /* Borde opcional */
+    position: relative; /* Posición relativa para el contenedor */
+}
+
+.marquesina {
+    display: inline-block; /* Muestra en línea y permite animaciones */
+    white-space: nowrap; /* Impide el ajuste de línea en el texto */
+    animation: marquee 10s linear infinite; /* Aplicar la animación */
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); } /* Comienza fuera del área visible a la derecha */
+    100% { transform: translateX(-100%); } /* Termina fuera del área visible a la izquierda */
+}
+
+.sub {
+    font-size: 50px; /* Tamaño del texto, equivalente al tamaño 6 del <font> */
+    font-weight: 700; /* Negrita */
+    font-family: "Orbitron", sans-serif;
+    color: rgb(255, 87, 51);
+    text-align: center; /* Alineación del texto a la derecha */
+}
+
+
+
+.tex{
+    font-size: 15px; /* Tamaño del texto, equivalente al tamaño 6 del <font> */
+    font-weight: 400; /* Negrita */
+    font-family: "Saira", sans-serif;
+    color: white;
+    text-align: center; /* Alineación del texto a la derecha */
+   
+}
+
+.fixed-image {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 200px; /* Ancho de la imagen en píxeles */
+    height: 200px; /* Altura de la imagen en píxeles */
+    z-index: 1000;
+}
+
+
+
+section{
+    display: flex;
+    width: 600px;
+    height: 430px;
+}
+
+section img{
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s ease;
+}
+
+section img:hover{
+    cursor: crosshair;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+}
+
+.section2 {
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 35px 0;
+            }
+
+.section2 .card {
+	position: relative;
+	width: 250px;
+	height: 325px;
+    background-color: black;
+	margin: 10px;
+	box-shadow: 0 15px 35px rgba(66, 63, 63, 0.5);
+	border-radius: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	backdrop-filter: blur(10px);
+}
+
+.section2 .card .content {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	transition: 0.5s;
+}
+
+.section2 .card:hover .content {
+	transform: translateY(-20px);
+}
+
+.section2 .card .content .imgBx {
+	position: relative;
+    top: 0;
+	width: 150px;
+	height: 150px;
+	overflow: hidden;
+}
+
+.section2 .card .content .imgBx img {
+	position: absolute ;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.section2 .card .content .contentBx h3 {
+	color: white;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 500;
+	font-size: 18px;
+	text-align: center;
+	margin: 50px 0 40px;
+	line-height: 1.1em;
+}
+
+.section2 .card .content .contentBx h3 span {
+	font-size: 12px;
+	font-weight: 300;
+	text-transform: initial;
+}
+
+.section2 .card .sci {
+	position: absolute;
+	bottom: 50px;
+	display: flex;
+}
+
+.section2 .card .sci li {
+	list-style: none;
+	margin: 0 10px;
+	transform: translateY(40px);
+	transition: 0.5s;
+	opacity: 0;
+}
+
+.section2 .card:hover .sci li {
+	transform: translateY(0px);
+	opacity: 1;
+}
+
+.section2 .card .sci li a {
+	color: #fff;
+	font-size: 20px;
+}
+
+
+.form-login {
+  width: 400px;
+  height: 340px;
+  background: #4e4d4d;
+  margin: auto;
+  margin-top: 75px;
+  box-shadow: 7px 13px 37px #000;
+  padding: 20px 30px;
+  border-top: 4px solid #017bab;
+  color: white;
+}
+
+.form-login h5 {
+  margin: 0;
+  text-align: center;
+  height: 40px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid;
+  font-size: 20px;
+}
+
+.controls {
+  width: 100%;
+  border: 1px solid #017bab;
+  margin-bottom: 15px;
+  padding: 11px 10px;
+  background: #252323;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.buttons2 {
+  width: 100%;
+  height: 40px;
+  background: #017bab;
+  border: none;
+  color: white;
+  margin-bottom: 16px;
+}
+
+.form-login p{
+  height: 40px;
+  text-align: center;
+  border-bottom: 1px solid;
+}
+
+.form-login a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.form-login a:hover {
+  text-decoration: underline;
+}
+
+

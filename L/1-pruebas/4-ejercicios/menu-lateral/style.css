@@ -1,0 +1,134 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Botón hamburguesa */
+#toggle-btn {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: white; /*color del icono*/
+    cursor: pointer;
+    z-index: 1000;
+}
+
+/* Sidebar expandida */
+.sidebar {
+    width: 220px;
+    background-color: #2c3e50;
+    color: white;
+    padding-top: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transition: width 0.3s ease;
+    overflow: hidden;
+}
+
+/* Sidebar compacta */
+.sidebar.collapsed {
+    width: 60px;
+}
+
+/* Menú en la barra */
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    padding: 0;
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: white;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.2s;
+}
+
+.sidebar ul li a:hover {
+    background-color: #34495e;
+}
+
+/* Íconos */
+.sidebar ul li a i {
+    margin-right: 10px;
+    min-width: 20px;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Texto que se oculta al colapsar */
+.sidebar ul li a span {
+    transition: opacity 0.2s ease;
+}
+
+/* Ocultar el texto si colapsa */
+.sidebar.collapsed ul li a span {
+    display: none;
+}
+
+/* Contenido principal */
+.contenido {
+    margin-left: 220px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+    flex: 1;
+}
+
+/* Ajustar contenido al colapsar */
+.contenido.collapsed {
+    margin-left: 60px;
+}
+
+/* Submenú inicialmente oculto */
+.submenu-list {
+  display: none;
+  list-style: none;
+  padding-left: 20px; /* sangría */
+}
+
+/* Flecha al lado derecho */
+.submenu-arrow {
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
+
+/* Mostrar submenú cuando activo */
+.submenu.open > .submenu-list {
+  display: block;
+}
+
+/* Girar flecha cuando abierto */
+.submenu.open > a > .submenu-arrow {
+  transform: rotate(180deg);
+}
+
+/* Ajuste para barra colapsada */
+.sidebar.collapsed .submenu-list {
+  display: none !important; /* siempre oculto en colapsado */
+}
+
+.sidebar.collapsed .submenu > a > span {
+  display: none;
+}
+
+.sidebar.collapsed .submenu > a > .submenu-arrow {
+  display: none;
+}

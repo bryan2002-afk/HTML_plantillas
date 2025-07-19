@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perfil con Menú Responsive</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f2f5;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      background-color: #1877f2;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .navbar .logo {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      background-color: white;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+      .navbar ul {
+        display: none;
+        flex-direction: column;
+        background-color: #1877f2;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        padding: 15px 0;
+      }
+
+      .navbar ul.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* ===== MAIN CONTENT ===== */
+    .main-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .profile-card {
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 100%;
+      width: 320px;
+      text-align: center;
+      padding: 30px 20px;
+      transition: transform 0.3s;
+    }
+
+    .profile-card:hover {
+      transform: scale(1.03);
+    }
+
+    .profile-image img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .profile-info h2 {
+      margin: 15px 0 5px;
+      color: #333;
+    }
+
+    .profile-info p {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #1877f2;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      cursor: pointer;
+      font-size: 15px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #155dcb;
+    }
+
+    @media (max-width: 400px) {
+      .profile-info p {
+        font-size: 13px;
+      }
+
+      button {
+        font-size: 14px;
+        padding: 9px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION BAR ===== -->
+  <nav class="navbar">
+    <div class="logo">Mi Perfil</div>
+    <div class="menu-toggle" id="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <ul id="nav-menu">
+      <li><a href="#">Inicio</a></li>
+      <li><a href="#">Perfil</a></li>
+      <li><a href="#">Configuración</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <div class="main-content">
+    <div class="profile-card">
+      <div class="profile-image">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Foto de perfil">
+      </div>
+      <div class="profile-info">
+        <h2>María Gómez</h2>
+        <p>Desarrolladora Frontend | Amante del café ☕</p>
+        <button id="followBtn">Seguir</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    const followBtn = document.getElementById("followBtn");
+    followBtn.addEventListener("click", () => {
+      if (followBtn.textContent === "Seguir") {
+        followBtn.textContent = "Siguiendo";
+        followBtn.style.backgroundColor = "#4CAF50";
+      } else {
+        followBtn.textContent = "Seguir";
+        followBtn.style.backgroundColor = "#1877f2";
+      }
+    });
+
+    // Menú toggle
+    const menuToggle = document.getElementById("menu-toggle");
+    const navMenu = document.getElementById("nav-menu");
+
+    menuToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+    });
+  </script>
+
+</body>
+</html>

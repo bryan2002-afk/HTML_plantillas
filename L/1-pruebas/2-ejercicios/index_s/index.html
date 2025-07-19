@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagina Inicio</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  
+
+</head>
+
+<style>
+      /* Estilos generales para todos los elementos */
+    * {
+        margin: 0; /* Elimina los márgenes predeterminados de todos los elementos */
+        padding: 0; /* Elimina el relleno predeterminado de todos los elementos */
+        box-sizing: border-box; /* Incluye el padding y el borde dentro del tamaño total del elemento */
+        font-family: sans-serif; /* Establece una fuente sans-serif como fuente predeterminada */
+    }
+
+    /* Estilos para el cuerpo de la página */
+    body {
+        min-height: 100dvh; /* Establece la altura mínima al 100% de la altura del viewport dinámico */
+        display: grid; /* Utiliza el sistema de rejilla CSS */
+        grid-template-rows: auto 1fr auto; /* Divide el cuerpo en tres filas: header (alto automático), main (ocupa el espacio restante), footer (alto automático) */
+    }
+
+    /* Estilos para el encabezado */
+    header {
+        background-color: skyblue; /* Color de fondo azul claro */
+    }
+
+    /* Estilos para el contenido principal */
+    main {
+        background-color: slateblue; /* Color de fondo azul pizarra */
+    }
+
+    /* Estilos para el pie de página */
+    footer {
+        background-color: #1a1a1a; /* Color de fondo gris muy oscuro (casi negro) */
+    }
+
+    /* Estilos para los encabezados h1 */
+    h1 {
+        color: #fff; /* Color del texto blanco */
+        text-align: center; /* Centra el texto horizontalmente */
+    }
+
+</style>
+
+
+<body>
+
+  <header><h1>HEADER</h1></header>
+
+  <main><h1>MAIN</h1></main>
+
+  <footer><h1>FOOTER</h1></footer>
+  
+</body>
+</html>

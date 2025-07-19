@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesión</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<!--se puede poner transparente el background de .container transparent
+    para poner una imagen de fonto en body background: url('img/word.jpg') no-repeat;-->
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "poppins", sans-serif;
+        }
+
+        body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: url('./img/p2.gif') no-repeat center center; /* Usa la ruta de tu imagen */
+        background-size: cover;
+        background-position: center;
+    }
+        
+        .container {
+            width: 420px;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 10 rgba(0, 0, 0, .2);
+            color: white;
+            border-radius:10px;
+            padding: 30px 40px;
+        }
+
+        .container h1 {
+            font-size: 36px;
+            text-align: center;
+        }
+
+        .container .input-box {
+            width: 100%;
+            height: 50px;
+            position: relative;
+            margin: 30px 0;
+        }
+
+        .input-box input {
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 40px;
+            font-size: 16px;
+            color: white;
+            padding: 20px 45px 20px 20px;
+        }
+
+        .input-box input::placeholder {
+            color: white;
+        }
+
+        .input-box i {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+        }
+
+
+        .container .btn {
+        position: relative; /* Posición relativa para los pseudoelementos */
+        width: 100%; /* Ancho del botón */
+        height: 45px; /* Altura del botón */
+        background-color: #000; /* Color de fondo negro */
+        display: flex; /* Usar flexbox para centrar contenido */
+        align-items: center; /* Centrar verticalmente */
+        color: white; /* Color del texto */
+        flex-direction: column; /* Colocar elementos en columna */
+        justify-content: center; /* Centrar horizontalmente */
+        border: none; /* Sin bordes */
+        padding: 12px; /* Espaciado interno */
+        gap: 12px; /* Espacio entre elementos (si los hay) */
+        border-radius: 8px; /* Bordes redondeados */
+        cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+    }
+ 
+        /* Estilo para el pseudoelemento ::before que crea un fondo animado */
+        .container .btn::before {
+            content: ''; /* Necesario para mostrar el pseudoelemento */
+            position: absolute; /* Posición absoluta respecto al botón */
+            inset: 0; /* Colocar en todos los bordes */
+            left: -4px; /* Desplazar ligeramente hacia la izquierda */
+            top: -1px; /* Desplazar ligeramente hacia arriba */
+            margin: auto; /* Centrar el pseudoelemento */
+            width: 100%; /* Ancho del fondo */
+            height: 45px; /* Altura del fondo */
+            border-radius: 10px; /* Bordes redondeados */
+            background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%); /* Fondo con degradado */
+            z-index: -10; /* Colocar detrás del contenido */
+            pointer-events: none; /* Ignorar eventos del mouse */
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Transición suave para animaciones */
+        }
+    
+        /* Estilo para el pseudoelemento ::after que agrega otro fondo */
+        .container .btn::after {
+            content: ""; /* Necesario para mostrar el pseudoelemento */
+            z-index: -1; /* Colocar detrás del contenido */
+            position: absolute; /* Posición absoluta respecto al botón */
+            inset: 0; /* Colocar en todos los bordes */
+            background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%); /* Fondo con degradado */
+            transform: translate3d(0, 0, 0) scale(0.95); /* Escalar el fondo */
+            filter: blur(20px); /* Aplicar desenfoque */
+        }
+    
+        /* Efecto al pasar el mouse sobre el botón */
+        .container .btn:hover::after {
+            filter: blur(30px); /* Aumentar el desenfoque */
+        }
+    
+        /* Efecto al pasar el mouse sobre el botón (parte del fondo) */
+        .container .btn:hover::before {
+            transform: rotate(-180deg); /* Rotar el fondo */
+        }
+    
+        /* Efecto al hacer clic en el botón */
+        .container .btn:active::before {
+            scale: 0.7; /* Reducir el tamaño del fondo */
+        }
+</style>
+
+<body>
+
+    <div class="container">
+        <br>
+        <h1>Inicio de sesión</h1>
+        <form method="post">
+            <div class="input-box">
+                <input type="text" placeholder="Usuario" id="nickname" name="nickname" required>
+                <i class='bx bxs-user'></i>
+            </div>
+
+            <div class="input-box">
+                <input type="password" placeholder="Contraseña" id="password" name="password" required>
+                <i class='bx bxs-lock'></i>
+            </div>
+
+            <div class="input-box">
+                <input type="text" placeholder="Palabra Clave" id="palabra_clave" name="palabra_clave" required>
+                <i class='bx bxs-detail'></i>
+            </div>
+            
+            <button type="submit" class="btn" value="Iniciar sesión">Login</button>
+        </form>
+        <br>
+    </div>
+
+</body>
+</html>

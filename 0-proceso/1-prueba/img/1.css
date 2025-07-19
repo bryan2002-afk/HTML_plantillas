@@ -1,0 +1,130 @@
+/* Bordes redondeados solo a contenedores principales */
+header, nav, aside, section, article, footer {
+    border-radius: 8px;
+}
+
+/* Grid layout general */
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* aside - section */
+    grid-template-rows: repeat(12, 1fr);
+    height: 98vh;
+    gap: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Encabezado ocupa toda la fila */
+header {
+    background-color: black;
+    grid-column: 1 / -1;
+    display: grid;
+    place-content: center;
+}
+
+/* Menú de navegación animado */
+nav {
+    margin: 27px auto 0;
+    position: relative;
+    width: 590px;
+    height: 50px;
+    background-color: #34495e;
+    border-radius: 8px;
+    font-size: 0;
+    place-content: center;
+}
+
+/* Enlaces del menú */
+nav a {
+    line-height: 50px;
+    height: 100%;
+    font-size: 15px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    width: 118px;
+}
+
+/* Barra animada que se desliza bajo el enlace */
+nav .animation {
+    position: absolute;
+    height: 100%;
+    top: 0;
+    z-index: 0;
+    transition: all 0.5s ease 0s;
+    border-radius: 8px;
+    background-color: #1abc9c; /* color de Home */
+    width: 118px;
+    left: 0;
+}
+
+/* Estilo cuando el enlace está activo */
+nav a.active {
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+/* Logo y nombre del sitio */
+.container-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.container-logo i {
+    font-size: 3rem;
+    color: white;
+}
+
+.container-logo h1 a {
+    text-decoration: none;
+    color: white;
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    text-align: center;
+   
+}
+
+/* Contenido lateral */
+aside {
+    background-color: #adff02;
+    grid-row: 3 / 12;
+    grid-column: 1;
+    display: grid;
+    place-content: center;
+}
+
+/* Sección principal */
+section {
+    background-color: #ff7d00;
+    text-align: center;
+    grid-row: 3 / 12;
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+}
+
+/* Artículos dentro de la sección */
+article {
+    background-color: #ffdd00;
+    height: 100%;
+    display: grid;
+    place-content: center;
+}
+
+/* Pie de página */
+footer {
+    background-color: #8f00ff;
+    grid-column: 1 / -1;
+    display: grid;
+    place-content: center;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Menú Lateral Desplegable</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Botón para mostrar/ocultar el menú -->
+
+
+    <!-- Botón para abrir/cerrar el menú -->
+    <button id="toggle-btn">&#9776;</button>
+
+    <nav class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="#" title="Inicio"><i class="fas fa-home"></i><span>Inicio</span></a></li>
+            
+            <li class="submenu">
+                <a href="#" class="submenu-toggle" title="Productos">
+                    <i class="fas fa-box"></i><span>Productos</span>
+                    <i class="fas fa-chevron-down submenu-arrow"></i>
+                </a>
+                <ul class="submenu-list">
+                    <li><a href="#" title="Agregar Producto"><i class="fas fa-plus"></i><span>Agregar Producto</span></a></li>
+                    <li><a href="#" title="Listar Productos"><i class="fas fa-list"></i><span>Listar Productos</span></a></li>
+                    <li><a href="#" title="Categorías"><i class="fas fa-tags"></i><span>Categorías</span></a></li>
+                </ul>
+            </li>
+            
+            <li><a href="#" title="Clientes"><i class="fas fa-users"></i><span>Clientes</span></a></li>
+            <li><a href="#" title="Proveedores"><i class="fas fa-truck"></i><span>Proveedores</span></a></li>
+            <li><a href="#" title="Configuración"><i class="fas fa-cog"></i><span>Configuración</span></a></li>
+        </ul>
+    </nav>
+
+
+
+
+    <!-- Contenido principal -->
+    <main class="contenido">
+        <h1>Bienvenido al sistema</h1>
+        <p>Selecciona una opción del menú lateral.</p>
+    </main>
+</body>
+</html>

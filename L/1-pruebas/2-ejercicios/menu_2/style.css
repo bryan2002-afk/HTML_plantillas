@@ -1,0 +1,85 @@
+/* Aplica a todos los elementos: 
+   fija su altura en 1000px y elimina márgenes y rellenos por defecto */
+* {
+    height: 1000px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para la barra de navegación */
+.navigation {
+    position: fixed; /* Se mantiene fija al hacer scroll */
+    height: 55px; /* Altura de la barra */
+    right: 0; /* Límite derecho */
+    left: 0;  /* Límite izquierdo */
+    background-color: navy; /* Color de fondo azul marino */
+    box-sizing: border-box; /* Incluye bordes y padding dentro del tamaño */
+    
+    /* Sombra decorativa (efecto de profundidad) */
+    -webkit-box-shadow: 0px 17px 59px 11px rgba(63, 0, 199, 0.62); 
+    -moz-box-shadow: 0px 17px 59px 11px rgba(63, 0, 199, 0.62); 
+    box-shadow: 0px 17px 59px 11px rgba(63, 0, 199, 0.62);
+}
+
+/* Estilo para el título dentro de la barra de navegación */
+.navigation h1 {
+    position: fixed; /* También fijo en la parte superior */
+    top: 0;
+    left: 0;
+    margin: 15px; /* Separación desde el borde superior e izquierdo */
+    font-family: Arial;
+    color: #1100ff; /* Color base (aunque es sobreescrito por gradiente) */
+    
+    /* Gradiente de colores aplicado al texto */
+    background-image: -webkit-linear-gradient(
+        0deg,
+        #4d40ff 0%,
+        #466e85 46%,
+        #ff0055 86%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-emphasis-color: transparent;
+    -webkit-text-fill-color: transparent; /* Hace visible solo el fondo en el texto */
+}
+
+/* Estilo para la lista de navegación (contenedor de los enlaces) */
+ul {
+    position: relative;
+    height: 55px; /* Igual altura que la barra de navegación */
+    left: 10px; /* Desplaza la lista horizontalmente hacia la derecha */
+}
+
+/* Estilo para cada ítem de la lista */
+li {
+    display: inline-block; /* Muestra los elementos en línea horizontal */
+    margin-left: 5px; /* Espacio entre ítems */
+    width: 90px; /* Ancho fijo de cada ítem */
+    height: 40px;
+    padding-top: 20px; /* Espaciado superior interno */
+    font-weight: bold;
+    list-style: none; /* Elimina viñetas predeterminadas */
+    text-align: center;
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+}
+
+/* Estilo base para los enlaces */
+a {
+    color: white; /* Color del texto */
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif; 
+    text-decoration: none; /* Elimina el subrayado por defecto */
+    transition: 0.5s; /* Transición suave para efectos */
+}
+
+/* Efecto al pasar el mouse sobre el enlace */
+a:hover {
+    background-color: #a581ff5b; /* Color de fondo translúcido */
+    
+    /* Sombra resplandeciente alrededor del enlace */
+    box-shadow: 0px 0px 400px 86px #a481ff;
+    -webkit-box-shadow: 0px 0px 400px 86px #a481ff; 
+    -moz-box-shadow: 0px 0px 400px 86px #a481ff; 
+    
+    text-decoration: underline white; /* Subrayado blanco */
+}

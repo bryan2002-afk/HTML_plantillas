@@ -1,0 +1,123 @@
+/* Importa la fuente Roboto desde Google Fonts en pesos 400 (normal) y 700 (negrita) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Aplica box-sizing: border-box a todos los elementos, incluyendo padding y borde en el tamaño total */
+* {
+    box-sizing: border-box;
+}
+
+/* Estilos generales del body */
+body {
+    background-color: #ecf0f1; /* Color de fondo gris claro */
+    font-family: 'Roboto', sans-serif; /* Fuente principal del sitio */
+    display: flex; /* Activa el modelo Flexbox */
+    align-items: center; /* Centra verticalmente los hijos del body */
+    justify-content: center; /* Centra horizontalmente los hijos del body */
+    height: 100vh; /* El body ocupa el 100% del alto de la ventana */
+    overflow: hidden; /* Oculta cualquier desbordamiento */
+    margin: 0; /* Elimina márgenes por defecto del navegador */
+    gap: 15px; /* Espacio entre los elementos hijos del body */
+}
+
+/* Las imágenes no excederán el ancho de su contenedor */
+img {
+    max-width: 100%;
+}
+
+/* Estilos para la tarjeta principal */
+.card {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .2); /* Sombra alrededor para dar profundidad */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta contenido que sobresalga */
+    width: 350px; /* Ancho fijo */
+    padding: 10px; /* Espacio interior dentro del borde */
+}
+
+/* Contenedor de la imagen principal de la tarjeta */
+.card-header {
+    height: 200px; /* Altura fija para la cabecera */
+}
+
+/* Imagen dentro de la cabecera de la tarjeta */
+.card-header img {
+    object-fit: cover; /* Ajusta la imagen sin deformarla y cubriendo el contenedor */
+    height: 100%; /* Ocupa toda la altura del contenedor */
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+}
+
+/* Contenido textual dentro de la tarjeta */
+.card-content {
+    background-color: #fff; /* Fondo blanco para contraste */
+    padding: 30px; /* Espaciado interior amplio */
+}
+
+/* Título dentro de la tarjeta */
+.card-title {
+    height: 20px; /* Altura fija */
+    margin: 0; /* Sin márgenes */
+}
+
+/* Párrafo o resumen del contenido */
+.card-excerpt {
+    color: #777; /* Color de texto gris suave */
+    margin: 10px 0 20px; /* Espaciado superior, lateral e inferior */
+}
+
+/* Contenedor del autor */
+.author {
+    display: flex; /* Alineación horizontal de elementos internos */
+}
+
+/* Imagen de perfil del autor */
+.profile-img {
+    border-radius: 50%; /* Hace la imagen completamente redonda */
+    overflow: hidden; /* Oculta partes de la imagen que sobresalgan del borde */
+    height: 40px; /* Alto fijo */
+    width: 40px; /* Ancho fijo */
+}
+
+/* Información del autor (nombre y fecha) */
+.author-info {
+    display: flex; /* Contenedor flexible */
+    flex-direction: column; /* Organiza el contenido en columna */
+    justify-content: space-around; /* Distribuye espacio entre los elementos */
+    margin-left: 10px; /* Espacio a la izquierda entre imagen y texto */
+    width: 100px; /* Ancho del área de texto */
+}
+
+/* Estilo del texto pequeño dentro de la info del autor */
+.author-info small {
+    color: #aaa; /* Color gris claro */
+    margin-top: 5px; /* Margen superior */
+}
+
+/* Fondo animado para efecto de carga tipo shimmer */
+.animated-bg {
+    background-image: linear-gradient(to right,
+        #f6f7f8 0%,
+        #edeef1 10%,
+        #f6f7f8 20%,
+        #f6f7f8 100%); /* Degradado para simular carga */
+    background-size: 200% 100%; /* Doble del tamaño normal para poder desplazar */
+    animation: bgPos 1s linear infinite; /* Animación continua del fondo */
+}
+
+/* Línea animada que simula texto durante la carga */
+.animated-bg-text {
+    border-radius: 50px; /* Bordes completamente redondeados (píldora) */
+    display: inline-block; /* Permite ajustar el tamaño manualmente */
+    margin: 0; /* Sin márgenes */
+    height: 10px; /* Alto del bloque simulado */
+    width: 100%; /* Ancho completo del contenedor */
+}
+
+/* Animación del fondo para el efecto shimmer */
+@keyframes bgPos {
+    0% {
+        background-position: 50% 0; /* Comienza en el centro */
+    }
+    100% {
+        background-position: -150% 0; /* Se mueve hacia la izquierda */
+    }
+}
+

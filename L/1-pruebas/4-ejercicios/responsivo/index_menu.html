@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo Responsivo</title>
+  <link rel="stylesheet" href="estilos/style.css">
+  
+</head>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #121212;
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+  color: #ffffff;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #1f1f1f;
+}
+
+.item {
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 900px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 200px; /* más alto */
+}
+
+.text {
+  flex: 1;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 10px;
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 600px) {
+  .content {
+    flex-direction: column;
+    height: auto;
+    align-items: flex-start;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+</style>
+
+
+<body>
+
+  <h1>Bienvenido al Ejemplo Responsivo</h1>
+
+  <div class="container">
+
+    <div class="item">
+      <div class="content">
+        <div class="text">
+          <h2> Cuenta </h2>
+          <p> Usuario </p>
+          <a href="#" class="button">Ver</a>
+          <a href="#" class="button">Editar</a>
+          <a href="#" class="button">Eliminar</a>
+          
+        </div>
+        <img src="img/debito.png" alt="Imagen 1">
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="content">
+        <div class="text">
+          <h2> Gmail </h2>
+          <p> surianobryan@gmail.com </p>
+          <a href="#" class="button">Ver</a>
+          <a href="#" class="button">Editar</a>
+          <a href="#" class="button">Eliminar</a>
+          
+        </div>
+        <img src="img/gmail.png" alt="Imagen 2">
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="content">
+        <div class="text">
+          <h2>Elemento 3</h2>
+          <p>Este es el tercer elemento. Asegúrate de que tu contenido sea fácil de leer y accesible.</p>
+          <a href="#" class="button">Leer más</a>
+        </div>
+        <img src="img/mega.png" alt="Imagen 3">
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="content">
+        <div class="text">
+          <h2>Elemento 4</h2>
+          <p>Este es el cuarto elemento. Asegúrate de que tu contenido sea fácil de leer y accesible.</p>
+          <a href="#" class="button">Leer más</a>
+        </div>
+        <img src="img/microsoft.png" alt="Imagen 4">
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="content">
+        <div class="text">
+          <h2>Elemento 5</h2>
+          <p>Este es el quinto elemento. Asegúrate de que tu contenido sea fácil de leer y accesible.</p>
+          <a href="#" class="button">Leer más</a>
+        </div>
+        <img src="img/proton.png" alt="Imagen 5">
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="content">
+        <div class="text">
+          <h2>Elemento 6</h2>
+          <p>Este es el sexto elemento. Asegúrate de que tu contenido sea fácil de leer y accesible.</p>
+          <a href="#" class="button">Leer más</a>
+        </div>
+        <img src="img/wifi.png" alt="Imagen 6">
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

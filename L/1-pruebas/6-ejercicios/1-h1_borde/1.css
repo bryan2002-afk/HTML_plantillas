@@ -1,0 +1,34 @@
+
+h1 {
+
+color: #212121;
+
+font-weight: 900;
+
+text-shadow: 0 0 0 #C83F12;
+
+font-family: 'Poppins', sans-serif;
+
+animation: rotate 2.2s infinite;
+
+}
+
+@keyframes rotate {
+
+0% {
+
+text-shadow: 5px 0 #C83F12;
+
+}
+
+50% {
+
+text-shadow: -5px 0 #FFCC00;
+
+}
+
+100% {
+
+text-shadow: 5px 0 #C83F12;
+
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo Responsivo</title>
+  <style>
+    /* Estilos generales */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    .item {
+      background-color: #f4f4f4;
+      padding: 20px;
+      margin-bottom: 10px;
+    }
+
+    /* Media query para tabletas */
+    @media (max-width: 768px) {
+      .container {
+        width: 90%;
+      }
+    }
+
+    /* Media query para móviles */
+    @media (max-width: 480px) {
+      .container {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">Elemento 1</div>
+    <div class="item">Elemento 2</div>
+    <div class="item">Elemento 3</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alerta</title>
+    <link rel="shortcut icon" href="img/alerta.ico" type="image/x-icon">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</head>
+
+<style>
+
+    html,body{
+        height: 50%;
+    }
+
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    button{
+        padding: 8px;
+        color: white;
+        border: none;
+        background-color: #407fdf;
+        border-radius: 3px;
+    }
+
+    button:hover{
+        background-color: #2a5596;
+    }
+</style>
+
+
+<body>
+
+    <div class="container">
+        <button type="button" onclick="alerta()">Click aquí</button>
+    </div>
+
+    <script>
+        function alerta(){
+            swal({
+                title:"Buen Trabajo!",
+                text:"Haz click en el botón!",
+                icon:"success",
+                button:"Listo!"
+            });
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,145 @@
+/* Importa la fuente Roboto desde Google Fonts con pesos 400 y 700 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Aplica box-sizing: border-box a todos los elementos para incluir padding y borde dentro del ancho y alto */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ecf0f1; /* Fondo gris claro */
+    font-family: 'Roboto', sans-serif; /* Fuente principal */
+    display: flex; /* Usa Flexbox para distribuir los elementos */
+    align-items: flex-start; /* Alinea los items al inicio verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    flex-wrap: wrap; /* Permite que las tarjetas se distribuyan en varias filas */
+    gap: 1px; /* Espacio entre tarjetas (antes era 30px) */
+    min-height: 100vh; /* Altura mínima igual a la ventana del navegador */
+    margin: 0; /* Elimina margenes por defecto */
+    padding: 40px 20px; /* Espaciado interior: 40px arriba/abajo, 20px laterales */
+}
+
+img {
+    max-width: 100%; /* Limita el ancho máximo al contenedor */
+    display: block; /* Evita espacio inferior debajo de imágenes inline */
+}
+
+.card {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .2); /* Sombra sutil para profundidad */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta contenido que sobresalga */
+    width: 350px; /* Ancho fijo */
+    background-color: #fff; /* Fondo blanco */
+    margin: 15px; /* Margen alrededor de cada tarjeta */
+    flex: 0 1 300px; /* No crece, puede reducirse, base 300px */
+}
+
+.card-header {
+    height: 200px; /* Altura fija para la imagen cabecera */
+    background-color: #ccc; /* Color gris para carga placeholder */
+}
+
+.card-header img {
+    object-fit: cover; /* Escala imagen para cubrir sin deformar */
+    height: 100%; /* Altura completa del contenedor */
+    width: 100%; /* Ancho completo */
+    display: block; /* Quita espacios fantasma */
+}
+
+.card-content {
+    padding: 30px; /* Espacio interior en contenido */
+}
+
+.card-title {
+    height: 20px; /* Altura fija para el título */
+    margin: 0; /* Sin margen */
+    font-size: 1.2rem; /* Tamaño del texto */
+    font-weight: 700; /* Negrita */
+    line-height: 1.4; /* Altura de línea */
+}
+
+.card-excerpt {
+    color: #777; /* Texto gris oscuro */
+    margin: 10px 0 20px; /* Margen arriba 10px, abajo 20px */
+    line-height: 1.5; /* Espaciado entre líneas */
+}
+
+.author {
+    display: flex; /* Usa flex para la sección autor */
+    align-items: center; /* Centra verticalmente */
+    gap: 10px; /* Espacio entre imagen y texto */
+}
+
+.profile-img {
+    border-radius: 50%; /* Imagen circular */
+    overflow: hidden; /* Oculta contenido fuera del círculo */
+    height: 40px; /* Altura fija */
+    width: 40px; /* Ancho fijo */
+    background-color: #ccc; /* Color gris para placeholder */
+}
+
+.profile-img img {
+    height: 100%; /* Imagen ocupa todo el contenedor */
+    width: 100%; /* Ancho completo */
+    object-fit: cover; /* Escala imagen para cubrir */
+}
+
+.author-info {
+    display: flex; /* Flexbox para apilar texto */
+    flex-direction: column; /* Dirección vertical */
+    justify-content: center; /* Centra verticalmente */
+}
+
+.author-info strong {
+    font-weight: 700; /* Negrita */
+    font-size: 14px; /* Tamaño del texto */
+}
+
+.author-info small {
+    color: #aaa; /* Texto gris claro */
+    font-size: 12px; /* Tamaño pequeño */
+    margin-top: 4px; /* Espacio arriba */
+}
+
+/* Animación skeleton shimmer para cargar contenido */
+.animated-bg {
+    background-image: linear-gradient(to right,
+            #f6f7f8 0%,
+            #edeef1 10%,
+            #f6f7f8 20%,
+            #f6f7f8 100%); /* Degradado para efecto brillo */
+    background-size: 200% 100%; /* Tamaño para animar */
+    animation: bgPos 1s linear infinite; /* Animación continua */
+}
+
+.animated-bg-text {
+    border-radius: 50px; /* Bordes redondeados tipo píldora */
+    display: inline-block; /* Se comporta como bloque en línea */
+    height: 10px; /* Altura del bloque */
+    width: 100%; /* Ancho completo */
+    margin-top: 5px; /* Separación arriba */
+}
+
+/* Definición de animación para mover el brillo */
+@keyframes bgPos {
+    0% {
+        background-position: 50% 0; /* Posición inicial */
+    }
+    100% {
+        background-position: -150% 0; /* Movimiento hacia la izquierda */
+    }
+}
+
+/* Estilos responsivos para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .card {
+        width: 100%; /* Tarjeta ocupa todo el ancho */
+        max-width: 500px; /* Máximo ancho permitido */
+    }
+
+    body {
+        justify-content: center; /* Centrar contenido */
+        padding: 20px; /* Menor padding */
+    }
+}
+

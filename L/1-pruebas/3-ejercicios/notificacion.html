@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es"> 
+
+<head> 
+  <meta charset="UTF-8"> 
+  <title>Ejemplo de Página HTML</title> 
+  <style>
+    #notificacion {
+      background-color: #f44336; /* rojo */
+      color: white;
+      padding: 15px;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      border-radius: 5px;
+      display: none;
+    }
+
+    #notificacion.mostrar {
+      display: block;
+    }
+  </style>
+</head> 
+
+<body> 
+  <div id="notificacion">¡Advertencia personalizada!</div>
+  <button onclick="mostrarNotificacion()">Mostrar notificación</button>
+
+  <script>
+    function mostrarNotificacion() {
+      const noti = document.getElementById("notificacion");
+      noti.classList.add("mostrar");
+
+      // Ocultar después de 3 segundos
+      setTimeout(() => {
+        noti.classList.remove("mostrar");
+      }, 3000);
+    }
+  </script>
+</body> 
+</html>

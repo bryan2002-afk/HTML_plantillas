@@ -1,0 +1,144 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ecf0f1;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1px; /* 30 */
+    min-height: 100vh;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.card {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 350px;
+    background-color: #fff;
+    margin: 15px;
+    flex: 0 1 300px;
+}
+
+.card-header {
+    height: 200px;
+    background-color: #ccc;
+}
+
+.card-header img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.card-content {
+    padding: 30px; /* 30 */
+}
+
+.card-title {
+    height: 20px;
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.card-excerpt {
+    color: #777;
+    margin: 10px 0 20px;
+    line-height: 1.5;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-img {
+    border-radius: 50%;
+    overflow: hidden;
+    height: 40px;
+    width: 40px;
+    background-color: #ccc;
+}
+
+.profile-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.author-info strong {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.author-info small {
+    color: #aaa;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* Skeleton animation */
+.animated-bg {
+    background-image: linear-gradient(to right,
+            #f6f7f8 0%,
+            #edeef1 10%,
+            #f6f7f8 20%,
+            #f6f7f8 100%);
+    background-size: 200% 100%;
+    animation: bgPos 1s linear infinite;
+}
+
+.animated-bg-text {
+    border-radius: 50px;
+    display: inline-block;
+    height: 10px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+@keyframes bgPos {
+    0% {
+        background-position: 50% 0;
+    }
+
+    100% {
+        background-position: -150% 0;
+    }
+}
+
+/* 📱 Responsive para móviles */
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    body {
+        justify-content: center;
+        padding: 20px;
+    }
+}
+
